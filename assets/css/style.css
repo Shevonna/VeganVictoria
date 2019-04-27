@@ -1,3 +1,4 @@
+
 #titletab{
     border:#333333 solid 4px;
     width:50%;
@@ -90,7 +91,4 @@ a.tablink {
     #titletab{
         width:100%;
     }
-.footer{
-    position: absolute;
-    bottom: 0%;
-}
+
