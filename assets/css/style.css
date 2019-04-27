@@ -1,8 +1,11 @@
-<<<<<<< HEAD
+html,body{
+    height:auto;
+    margin:0;
+}
+.container{
+    min-height:100%;
+}
 
-=======
-<<<<<<< HEAD
->>>>>>> gallery
 #titletab{
     border:#333333 solid 4px;
     width:50%;
@@ -95,13 +98,10 @@ a.tablink {
     #titletab{
         width:100%;
     }
-<<<<<<< HEAD
-
-=======
-.footer{
-    position: absolute;
-    bottom: 0%;
 }
-=======
->>>>>>> gallery
->>>>>>> gallery
+.footer{
+    margin-top:-50px;
+}
+#shoe,footer{
+    height:50px;
+}
