@@ -1,5 +1,5 @@
 #titletab{
-    border:#221120 solid 4px;
+    border:#333333 solid 4px;
     width:50%;
     border-top-left-radius:64px;
     border-top-right-radius:64px;
@@ -11,26 +11,25 @@
     width:auto;
     height: 120px;
     padding:10px;
-    border: double #e2c5ee 6px;
-    border-bottom: double #e2c5ee 5px;
+    border: double #c7b9aa 6px;
+    border-bottom: double #c7b9aa 5px;
     border-top-right-radius: 60px;
     border-top-left-radius: 60px;
-    background-color:#221120;
+    background-color:#333333;
 }
 
 #title{
     font-size:400%;
-    color:#d1b4dd;
+    color:#b6a899;
     text-align:center;
 }
 
 #tabs {
     position:relative;
-    background-color:#e2c5ee;
+    background-color:#c7b9aa;
     width:auto;
-    height:72px;
-    padding:15px;
-    border: solid 4px #221120;
+    padding:30px;
+    border: solid 4px #333333;
     border-top-right-radius: 45px;
     color:#ffffff;
     text-align:center;
@@ -38,35 +37,42 @@
 
 a.tablink {
     position:relative;
-    top:12px;
-    background-color:#221120;
+    background-color:#333333;
     padding:10px;
     margin:5px;
-    border:double #e2c5ee 8px;
+    border:double #c7b9aa 8px;
     border-radius:10px;
-    color:#d1b4dd;
-    font-size:36pt;
+    color:#b6a899;
+    font-size:24pt;
 }
 
 @media screen and (max-width: 980px) {
     #titletab{
         width:50%;
     }
+    #titletabb{
+        padding:12px;
+    }
+    #title{
+        font-size:225%;
+    }
     #tabs {
-        height:72px;
-        padding:15px;
+        padding:20px;
         text-align:center;
     }
     a.tablink {
-        top:15px;
+        top:5px;
         padding:10px;
         margin:5px;
-        font-size:36pt;
+        font-size:24pt;
     }
 }
 @media screen and (max-width:768px) {
     #titletab{
         width:100%;
+    }
+    #title{
+        font-size:250%;
     }
     #tabs {
         height:72px;
@@ -75,10 +81,9 @@ a.tablink {
         border-top-right-radius:0px;
     }
     a.tablink {
-        top:12px;
         padding:8px;
         margin:3px;
-        font-size:24pt;
+        font-size:16pt;
     }
 }
 @media screen and (max-width:640px) {
