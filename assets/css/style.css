@@ -90,4 +90,7 @@ a.tablink {
     #titletab{
         width:100%;
     }
+.footer{
+    position: absolute;
+    bottom: 0%;
 }
