@@ -39,40 +39,40 @@
 
 <div class = "row">
 
-<div class = "col-6">
+<div class = "col-sm-6">
 
 <!-- Contact Form -->
 <form>
     <div class="form-group">
-        <label for="exampleInputEmail1">Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        <label for="contactName">Name</label>
+        <input type="text" class="form-control" id="contactName" aria-describedby="emailHelp"
             placeholder="Enter Name">
     </div>
     <div class="form-group">
-        <label for="exampleInputPassword1">Email</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Email">
+        <label for="contactEmail">Email</label>
+        <input type="email" class="form-control" id="contactEmail" placeholder="Enter Email">
     </div>
     <div class="form-group">
-            <label for="exampleInputEmail1">Subject</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            <label for="contactSubject">Subject</label>
+            <input type="text" class="form-control" id="contactSubject" aria-describedby="emailHelp"
                 placeholder="Enter Subject">
         </div>
         <div class="form-group">
-                <label for="exampleInputEmail1">Message</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                    placeholder="Enter Message">
+                <label for="contactMessage">Message</label>
+                <textarea class="form-control" id="contactMessage" rows="5" style="resize:none"
+                    placeholder="Enter Message"></textarea>
             </div>
     <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Order Custom Cake</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-dark" id="contactSubmit">Submit</button>
 </form>
 </div>
 
-<div class = "col-6">
+<div class = "col-sm-6">
 
-<div class="card" style="width: 18rem;">
+    <div class="card" style="width: 18rem;">
         <img src="https://s30451.pcdn.co/wp-content/uploads/2018/05/livekindly-vegan-by-victorias-Cropped.jpg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Location</h5>
@@ -82,7 +82,6 @@
       </div>
 
 </div>
-
 <h3>Our Location</h3>
         <!--The div element for the map -->
         <div id="map"></div>
@@ -110,12 +109,6 @@
 
 
 
-
-
-
-
-
-
     
   </div>
 <div id="shoe"></div>
@@ -124,6 +117,7 @@
       <span class="navbar-brand mb-0 h1">Phone Number:555-555-5555</span>
 </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase.js"></script>
     <script src="assets/javascript/web.js"></script>
 </body>
 </html>

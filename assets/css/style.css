@@ -52,7 +52,6 @@ header{
     padding:30px;
     border: solid 4px #333333;
     border-top-right-radius: 45px;
-    color:#ffffff;
     text-align:center;
 }
 
@@ -79,11 +78,11 @@ footer{
     margin-right:auto;
     background-color:#ffffff;
 }
-#shoe,footer{
+#shoe{
     height:50px;
 }
 
-#map{
+#map,.card{
     margin:10px;
 }
 
@@ -130,6 +129,14 @@ footer{
 @media screen and (max-width:640px) {
     #titletab{
         width:100%;
+    }
+    a.tablink{
+        font-size:14pt;
+    }
+}
+@media(min-width:360px){
+    header,#shoe,footer{
+        max-width:100%;
     }
 }
 @media(min-width:576px){
