@@ -22,7 +22,7 @@ header{
 
 #titletab{
     border:#333333 solid 4px;
-    width:50%;
+    max-width:50%;
     border-top-left-radius:64px;
     border-top-right-radius:64px;
 }
@@ -96,60 +96,39 @@ img {
 
     width: 100%;
 }
-
-@media screen and (max-width: 992px) {
+@media(min-width:320px){
+    header,#shoe,footer{
+        max-width:100%;
+    }
     #titletab{
-        width:50%;
+        max-width:100%;
     }
-    #titletabb{
-        padding:12px;
+    #tabs{
+        border-top-right-radius: 0px;
     }
-    #title{
-        font-size:225%;
+    a.tablink{
+        font-size:.65em;
+        margin:0px;
     }
-    #tabs {
-        padding:20px;
-        text-align:center;
+}
+@media(min-width:576px){
+    header,#shoe,footer{
+        max-width:550px;
     }
-    a.tablink {
-        top:5px;
-        padding:10px;
-        margin:5px;
+}
+@media (min-width:768px){
+    header,#shoe,footer{
+        max-width:740px;
+    }
+    #titletab{
+        max-width:60%;
+    }
+    #tabs{
+        border-top-right-radius: 45px;
+    }
+    a.tablink{
         font-size:24pt;
-    }
-}
-@media screen and (max-width:768px) {
-    #titletab{
-        width:100%;
-    }
-    #title{
-        font-size:250%;
-    }
-    #tabs {
-        height:72px;
-        padding:10px;
-        text-align:center;
-        border-top-right-radius:0px;
-    }
-    a.tablink {
-        padding:8px;
-        margin:3px;
-        font-size:16pt;
-    }
-}
-@media screen and (max-width:640px) {
-    #titletab{
-        width:100%;
-    }
-}
-@media(min-width:576px){
-    header,#shoe,footer{
-        max-width:550px;
-    }
-}
-@media (min-width:768px){
-    header,#shoe,footer{
-        max-width:740px;
+        margin:5px;
     }
 }
 @media (min-width:992px){
@@ -157,30 +136,6 @@ img {
         max-width:960px;
     }
 }
-
-@media (min-width:1200px){
-    header,#shoe,footer{
-        max-width:1140px;
-    }
-}
-
-
-@media(min-width:576px){
-    header,#shoe,footer{
-        max-width:550px;
-    }
-}
-@media (min-width:768px){
-    header,#shoe,footer{
-        max-width:740px;
-    }
-}
-@media (min-width:992px){
-    header,#shoe,footer{
-        max-width:960px;
-    }
-}
-
 @media (min-width:1200px){
     header,#shoe,footer{
         max-width:1140px;
