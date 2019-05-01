@@ -87,6 +87,15 @@ footer{
     margin:10px;
 }
 
+#menu-box {
+    text-align: center;
+}
+
+img {
+
+    width: 100%;
+}
+
 @media screen and (max-width: 992px) {
     #titletab{
         width:50%;
@@ -154,12 +163,25 @@ footer{
     }
 }
 
-#menu-box {
-    text-align: center;
+
+@media(min-width:576px){
+    header,#shoe,footer{
+        max-width:550px;
+    }
+}
+@media (min-width:768px){
+    header,#shoe,footer{
+        max-width:740px;
+    }
+}
+@media (min-width:992px){
+    header,#shoe,footer{
+        max-width:960px;
+    }
 }
 
-img {
-
-    width: 100%;
+@media (min-width:1200px){
+    header,#shoe,footer{
+        max-width:1140px;
+    }
 }
-
