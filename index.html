@@ -36,6 +36,7 @@
             </div>
             
             <div class="col-8">
+                <div id="yelpReview"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo lorem, tempus at imperdiet vel, faucibus nec nisi. Fusce ultricies volutpat quam id tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in venenatis mauris, nec elementum nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus faucibus orci porttitor facilisis dictum. Praesent ultrices ullamcorper tortor semper tristique. Praesent quis maximus neque. Aliquam odio neque, condimentum tincidunt accumsan at, tincidunt non nunc. Ut bibendum mollis risus, in interdum felis fringilla nec. Ut cursus, diam sit amet cursus pretium, velit augue pulvinar ex, in dignissim ante ipsum id nibh. In hac habitasse platea dictumst. Cras laoreet rhoncus fermentum. Phasellus vitae sagittis nisi, sit amet euismod ipsum.</p>           
             </div>
         </div>
@@ -76,6 +77,59 @@ var distance = countDownDate - now;
     clearInterval(x);
     document.getElementById("timer").innerHTML = "WE'RE OPEN";
   }
-}, 1000);</script>
+}, 1000);
+
+     // This is our API key. Add your own API key between the ""
+     var APIKey = "ItJY3uHZmu45iU-LHf-tJ0TNABhWAvKGFhJI3LBkI8YdNl4g-Y3qC14uN9SuFnGFUCVEG0ZUgGJGh5j234cD3DH-hFP7futcE1326DA7k4zEjdR2DEEzbatsUfjBXHYx";
+
+// Here we are building the URL we need to query the database
+var queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/vegan-by-victorias-santa-ana";
+
+// We then created an AJAX call
+$.ajax({
+    url: queryURL,
+    method: "GET",
+    headers: {
+        'Authorization': 'Bearer ' + APIKey
+    }
+}).then(function (response) {
+
+    console.log(response);
+    var rating = response.rating;
+    var imageURL = response.image_url;
+    var Image = $("<img>");
+    var ratingStars = $("<img>");
+    var ratingStarsSRC;
+    Image.attr("src", imageURL);
+    Image.attr("alt", "news image");
+    if(rating<1){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_0.png";
+    }else if(rating<=1){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_1.png";
+    }else if(rating<=1.5){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_1_half.png";
+    }else if(rating<=2){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_2.png";
+    }else if(rating<=2.5){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_2_half.png";
+    }else if(rating<=3){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_3.png";
+    }else if(rating<=3.5){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_3_half.png";
+    }else if(rating<=4){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_4.png";
+    }else if(rating<=4.5){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_4_half.png";
+    }else if(rating==5){
+        ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_5.png";
+    }
+    ratingStars.attr("src",ratingStarsSRC);
+
+    $("#yelpReview").append(ratingStars);
+    $("#yelpReview").append(Image);
+
+});
+
+</script>
 </body>
 </html>
