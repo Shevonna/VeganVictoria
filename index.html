@@ -98,10 +98,15 @@ $.ajax({
     var rating = response.rating;
     var imageURL = response.image_url;
     var Image = $("<img>");
+    var yelp = $("<img>");
+    yelp.attr("src","assets/images/Yelp_burst_positive_RGB.png");
+    yelp.attr("style","width:20%");
     var ratingStars = $("<img>");
+    ratingStars.attr("style","width:80%");
     var ratingStarsSRC;
     Image.attr("src", imageURL);
     Image.attr("alt", "news image");
+    Image.attr("style","margin:10px");
     if(rating<1){
         ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_0.png";
     }else if(rating<=1){
@@ -124,7 +129,7 @@ $.ajax({
         ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_5.png";
     }
     ratingStars.attr("src",ratingStarsSRC);
-
+    $("#yelpReview").append(yelp);
     $("#yelpReview").append(ratingStars);
     $("#yelpReview").append(Image);
 
