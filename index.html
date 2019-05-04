@@ -33,10 +33,11 @@
         <div class="row">
             <div class="col-4">
                 <img src="assets/images/image10.jpeg">
+                <div id="yelpReview"></div>
             </div>
             
             <div class="col-8">
-                <div id="yelpReview"></div>
+                <div id="openTime"></div>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo lorem, tempus at imperdiet vel, faucibus nec nisi. Fusce ultricies volutpat quam id tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in venenatis mauris, nec elementum nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus faucibus orci porttitor facilisis dictum. Praesent ultrices ullamcorper tortor semper tristique. Praesent quis maximus neque. Aliquam odio neque, condimentum tincidunt accumsan at, tincidunt non nunc. Ut bibendum mollis risus, in interdum felis fringilla nec. Ut cursus, diam sit amet cursus pretium, velit augue pulvinar ex, in dignissim ante ipsum id nibh. In hac habitasse platea dictumst. Cras laoreet rhoncus fermentum. Phasellus vitae sagittis nisi, sit amet euismod ipsum.</p>           
             </div>
         </div>
@@ -95,6 +96,7 @@ $.ajax({
 }).then(function (response) {
 
     console.log(response);
+    //Yelp Star Display
     var rating = response.rating;
     var imageURL = response.image_url;
     var Image = $("<img>");
@@ -102,11 +104,11 @@ $.ajax({
     yelp.attr("src","assets/images/Yelp_burst_positive_RGB.png");
     yelp.attr("style","width:20%");
     var ratingStars = $("<img>");
-    ratingStars.attr("style","width:80%");
+    ratingStars.attr("style","width:150px");
     var ratingStarsSRC;
     Image.attr("src", imageURL);
     Image.attr("alt", "news image");
-    Image.attr("style","margin:10px");
+    Image.attr("style","width:80%; margin:10px;");
     if(rating<1){
         ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_0.png";
     }else if(rating<=1){
@@ -133,6 +135,13 @@ $.ajax({
     $("#yelpReview").append(ratingStars);
     $("#yelpReview").append(Image);
 
+    //Is the store open?
+    var businessHour = response.hours[0].is_open_now;
+    if(businessHour===false){
+        $("#openTime").html("<h4>We are closed at this time.</h4>");
+    } else if(businessHour===true){
+        $("#openTime").html("<h4>We are open for business.</h4>");
+    }
 });
 
 </script>
