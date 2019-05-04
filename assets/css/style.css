@@ -55,7 +55,16 @@ header{
     color:#ffffff;
     text-align:center;
 }
-
+/*.tabbutton{
+    position:relative;
+    background-color:#333333;
+    width:20%;
+    padding:10px;
+    margin:10px;
+    border:double #c7b9aa 8px;
+    border-radius:10px;
+    float:left;
+}*/
 a.tablink {
     position:relative;
     background-color:#333333;
@@ -79,8 +88,6 @@ footer{
     margin-left:auto;
     margin-right:auto;
     background-color:#ffffff;
-}
-#shoe,footer{
     height:50px;
 }
 
@@ -95,6 +102,9 @@ footer{
 img {
 
     width: 100%;
+}
+.navbar-brand{
+    white-space:normal;
 }
 @media(min-width:320px){
     header,#shoe,footer{
