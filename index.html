@@ -7,6 +7,15 @@
     <title>Vegan by Victora's</title>
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <style>
+        table,th,td{
+            border:2px solid #333;
+            padding:3px;
+        }
+        table{
+            margin:4px;
+        }
+    </style>
 </head>
 <body>
     <header>   
@@ -33,11 +42,54 @@
         <div class="row">
             <div class="col-4">
                 <img src="assets/images/image10.jpeg">
-                <div id="yelpReview"></div>
+                <div id="yelpReview"><table id="weeklyHour"></table>
+                        <!--<table>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Open</th>
+                                    <th>Close</th>
+                                </tr>
+                                <tr>
+                                    <td>Monday</td>
+                                    <td>10 AM</td>
+                                    <td>8 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuesday</td>
+                                    <td>9 AM</td>
+                                    <td>8 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Wednesday</td>
+                                    <td>9 AM</td>
+                                    <td>8 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Thursday</td>
+                                    <td>9 AM</td>
+                                    <td>8 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Friday</td>
+                                    <td>9 AM</td>
+                                    <td>8 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Saturday</td>
+                                    <td>9 AM</td>
+                                    <td>5 PM</td>
+                                </tr>
+                                <tr>
+                                    <td>Sunday</td>
+                                    <td colspan="2">Closed</td>
+                                </tr>
+                            </table>-->
+                </div>
             </div>
             
             <div class="col-8">
                 <div id="openTime"></div>
+                
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo lorem, tempus at imperdiet vel, faucibus nec nisi. Fusce ultricies volutpat quam id tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce in venenatis mauris, nec elementum nisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus faucibus orci porttitor facilisis dictum. Praesent ultrices ullamcorper tortor semper tristique. Praesent quis maximus neque. Aliquam odio neque, condimentum tincidunt accumsan at, tincidunt non nunc. Ut bibendum mollis risus, in interdum felis fringilla nec. Ut cursus, diam sit amet cursus pretium, velit augue pulvinar ex, in dignissim ante ipsum id nibh. In hac habitasse platea dictumst. Cras laoreet rhoncus fermentum. Phasellus vitae sagittis nisi, sit amet euismod ipsum.</p>           
             </div>
         </div>
@@ -58,6 +110,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
     <script src="assets/javascript/web.js"></script>
     <script>
     //Opening Day
@@ -131,8 +184,9 @@ $.ajax({
         ratingStarsSRC="assets/yelp_stars/web_and_ios/large/large_5.png";
     }
     ratingStars.attr("src",ratingStarsSRC);
-    $("#yelpReview").append(yelp);
-    $("#yelpReview").append(ratingStars);
+    
+    $("#yelpReview").prepend(ratingStars);
+    $("#yelpReview").prepend(yelp);
     $("#yelpReview").append(Image);
 
     //Is the store open?
@@ -142,6 +196,47 @@ $.ajax({
     } else if(businessHour===true){
         $("#openTime").html("<h4>We are open for business.</h4>");
     }
+    var wkDay=(moment().format('dddd'));
+    var wkoHour;
+    var wkcHour;
+    var wRow=$("<tr>");
+    var wHead=$("<th colspan='2'>");
+    var hRow=$("<tr>");
+    var oHour=$("<td>");
+    var cHour=$("<td>");
+    var sHour=$("<td colspan='2'>");
+    sHour.text("Closed");
+    var d;
+    if(wkDay=="Monday"){
+        d=0;
+    }else if(wkDay=="Tuesday"){
+        d=1;
+    }else if(wkDay="Wednesday"){
+        d=2;
+    }else if(wkDay="Thursday"){
+        d=3;
+    }else if(wkDay="Friday"){
+        d=4;
+    }else if(wkDay="Saturday"){
+        d=5;
+    }
+    var dStart=response.hours[0].open[d].start;
+    var dEnd=response.hours[0].open[d].end;
+    var hStart=moment(dStart,"HHmm").format("h:mm a");
+    var hEnd=moment(dEnd,"HHmm").format("h:mm a");
+    oHour.text(hStart);
+    cHour.text(hEnd);
+    if(wkDay == "Sunday"){
+        hRow.append(sHour);
+    }else{
+    hRow.append(oHour);
+    hRow.append(cHour);
+    }
+    wHead.text(wkDay+" Hours");
+    wRow.append(wHead);
+    $("#weeklyHour").append(wRow);
+    $("#weeklyHour").append("<tr><td>Open</td><td>Closed</td></tr>")
+    $("#weeklyHour").append(hRow);
 });
 
 </script>
