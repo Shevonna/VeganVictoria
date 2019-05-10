@@ -11,3 +11,4 @@ var firebaseConfig = {
   firebase.initializeApp(firebaseConfig);
 
   //Reminder: Add "<script src="https://www.gstatic.com/firebasejs/6.0.1/firebase-app.js"></script>" to the desired html pages.
+

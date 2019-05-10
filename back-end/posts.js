@@ -72,6 +72,10 @@ var config = {
   
     // Append the new row to the table
     $("#employee-table > tbody").append(newRow);
+
+    $("#Headline").text(headline);
+    $("#News").text(news);
+
   });
   
   
