@@ -1,4 +1,10 @@
+$(document).ready(function(){
 
+    /*! Fades in page on load */
+    $('body').css('display', 'none');
+    $('body').fadeIn(5000);
+    
+    });
 
     //Opening Day
     var countDownDate = new Date("June 15, 2019 9:00:00").getTime();
