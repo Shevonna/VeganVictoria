@@ -2,6 +2,9 @@ html,body{
     height:100%;
     margin:0;
 }
+h1{
+    font-size:1.8em;
+}
 h3{
     margin:5px;
 }
@@ -48,7 +51,7 @@ header{
 a.tablink {
     margin:5px;
     color:#c7b29c;
-    font-size:24pt;
+    font-size:2em;
 }
 a.footlink {
     margin:5px;
@@ -135,7 +138,7 @@ img {
         width:auto;
     }
     a.tablink{
-        font-size:12pt;
+        font-size:1em;
         margin:0px;
     }
 }
@@ -157,7 +160,7 @@ img {
         width:20%;
     }
     a.tablink{
-        font-size:24pt;
+        font-size:2em;
         margin:5px;
     }
     #menubar{
