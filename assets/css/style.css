@@ -12,6 +12,7 @@ body {
     background: linear-gradient(-75deg, rgb(39, 25, 25), rgb(22, 5, 12), rgb(39, 28, 35), rgb(8, 3, 6));
     background-size: 600%, 400%;
     animation: Gradient 15s ease infinite;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
  }
  @-webkit-keyframes Gradient {
 
@@ -39,10 +40,6 @@ body {
     margin: 0;
   }
  
-  body {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-  }
- 
   .navbar {
     font-size: 18px;
     background-image: linear-gradient(260deg, #2376ae 0%, #c16ecf 100%);
@@ -53,6 +50,8 @@ body {
     position:fixed;
     width:100%;
     z-index:1;
+    top:0;
+    left:0;
   }
   .navbar-brand{
     white-space:normal;
@@ -61,6 +60,7 @@ body {
   .main-nav {
     list-style-type: none;
     display: none;
+    margin-top:1em;
   }
  
   .nav-links,
@@ -71,6 +71,9 @@ body {
 #logo{
   width:3em;
   height:3em;
+}
+#vvLogo{
+  margin-top:80px;
 }
   .main-nav li {
     text-align: center;
@@ -100,13 +103,6 @@ table{
     margin-left:auto;
     margin-right:auto;
 }
-/* #map{
-    margin:10px;
-    height: 400px;
-     The height is 400 pixels 
-    width: 100%;
-     The width is the width of the web page 
-} */
 
 
 img {
@@ -120,9 +116,6 @@ img {
     margin: 0;
   }
   
-  body {
-    font-family: Roboto, Helvetica, Arial, sans-serif;
-  }
   
   .navbar {
     font-size: 18px;
@@ -155,9 +148,6 @@ img {
     margin-left: 20px;
   }
 
- img {
-     width: 100%;
- }
 
   .navbar-toggle {
     position: absolute;
@@ -167,7 +157,9 @@ img {
     color: rgba(255, 255, 255, 0.8);
     font-size: 24px;
   }
-
+.card-title,.card-text{
+  color:#000;
+}
  
   #chkToggle {
     display: none;
@@ -182,7 +174,7 @@ img {
       display: flex;
       justify-content: space-between;
       padding-bottom: 0;
-      height: 70px;
+      height: 90px;
       align-items: center;
     }
  
